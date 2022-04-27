@@ -1,6 +1,7 @@
 package src.model.dao;
 
 import src.db.DB;
+import src.model.dao.impl.DepartmentDaoJDBC;
 import src.model.dao.impl.SellerDaoJDBC;
 
 public class DaoFactory {
@@ -8,7 +9,7 @@ public class DaoFactory {
         return new SellerDaoJDBC(DB.getConnection());
     }
 
-    // public static DepartmentDao createDepartmentDao(){
-    //     return new DepartmentDaoJDBC();
-    // }
+    public static DepartmentDao createDepartmentDao(){
+        return new DepartmentDaoJDBC(DB.getConnection());
+    }
 }
